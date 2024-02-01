@@ -20,7 +20,7 @@ const Yes = () => {
     audio.play();
   };
 
-  const yesStyle = {
+  const yesStyle: React.CSSProperties = {
     position: 'fixed',
     top: 0,
     left: 0,

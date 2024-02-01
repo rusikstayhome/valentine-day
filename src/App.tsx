@@ -3,7 +3,6 @@ import './App.css'
 import errorIamge from './assets/error.jpg';
 import clickSound from './assets/error-call-to-attention-129258.mp3';
 import clickSoundYes from './assets/congratulations-deep-voice-172193.mp3';
-import Yes from './Yes';
 import { useNavigate } from 'react-router-dom';
 
 interface Position {
@@ -28,17 +27,17 @@ function App() {
     setOpacity((prev) => prev + 0.25)
   };
 
-  const yesButtonClick = (nav) => {
+  const yesButtonClick = (nav: string) => {
     const audio = new Audio(clickSoundYes);
     audio.play();
     navigate(nav)
   };
 
-  const buttonStyle = position
+  const buttonStyle: React.CSSProperties = position
     ? { position: 'absolute', top: `${position.top}vh`, left: `${position.left}vw` }
     : {};
 
-    const errorStyle = {
+    const errorStyle: React.CSSProperties = {
       position: 'absolute',
       backgroundImage: `url(${errorIamge})`,
       backgroundRepeat: 'no-repeat',
